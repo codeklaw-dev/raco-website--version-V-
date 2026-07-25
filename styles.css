@@ -190,7 +190,11 @@ html[data-theme="dark"] .hero-display-frame { --frame-surface: #404040; }
 .scroll-intro h2 { font-size: clamp(42px,5vw,76px); }
 .scroll-intro h2 em { color: rgba(7,17,13,.48); }
 .scroll-intro .eyebrow { color: rgba(7,17,13,.55); }
-.scroll-steps { margin-top: 42px; display: flex; align-items: center; gap: 0; }
+.scroll-intro-summary { max-width: 500px; margin: 28px 0 0; color: rgba(7,17,13,.62); font-size: 14px; line-height: 1.7; }
+.journey-wheel { width: 150px; height: 150px; margin-top: 38px; position: relative; display: grid; place-items: center; color: var(--ink); }
+.journey-wheel-ring { position: absolute; inset: 0; border-radius: 50%; background: repeating-conic-gradient(from 0deg, currentColor 0deg 1.5deg, transparent 1.5deg 7.5deg); mask: radial-gradient(circle, transparent 0 56%, #000 57% 72%, transparent 73%); transform: rotate(var(--wheel-rotation,0deg)); transition: transform .12s linear; }
+.journey-wheel > span { width: 58px; height: 58px; display: grid; place-items: center; border: 1px solid currentColor; border-radius: 50%; background: var(--brand-white); font: 500 11px var(--mono); }
+.scroll-steps { display: none; }
 .scroll-steps span { min-width: 52px; padding: 10px 0; border-bottom: 1px solid rgba(18,63,89,.22); color: rgba(18,63,89,.32); font: 500 8px var(--mono); transition: color .35s, border-color .35s; }
 .scroll-steps span.is-active { color: var(--brand-cobalt); border-color: var(--brand-cobalt); }
 .scroll-intro-track { display: grid; gap: 18px; }
@@ -500,8 +504,11 @@ html[data-theme="dark"] .platform-grid img { filter: saturate(.9) brightness(1.1
 .scroll-intro-card:nth-child(3).is-active > div { color: rgba(255,255,255,.74); }
 .scroll-intro-card:nth-child(4).is-active { background: linear-gradient(110deg, #00e0ff, #f5f4ef 84%); }
 .scroll-intro-track { gap: 12px; border-top: 0; }
-.scroll-intro-card { min-height: 0; padding: 0; display: block; border: 1px solid rgba(11,16,30,.2); clip-path: polygon(0 0, 91% 0, 94% 16px, 100% 16px, 100% 100%, 8% 100%, 5% calc(100% - 16px), 0 calc(100% - 16px)); background: rgba(255,255,255,.58) !important; opacity: 1; transform: none; transition: background .35s ease, border-color .35s ease, box-shadow .35s ease; }
-.scroll-intro-card[open] { border-color: rgba(11,16,30,.46); background: #f5f5f0 !important; box-shadow: 0 22px 55px rgba(11,16,30,.09); }
+.scroll-intro-card { min-height: 0; padding: 0; display: block; position: relative; border: 0; clip-path: polygon(0 0, 91% 0, 94% 16px, 100% 16px, 100% 100%, 8% 100%, 5% calc(100% - 16px), 0 calc(100% - 16px)); background: rgba(11,16,30,.34) !important; opacity: 1; transform: none; transition: background .35s ease, box-shadow .35s ease; }
+.scroll-intro-card::before { content: ""; position: absolute; z-index: 0; inset: 1px; clip-path: polygon(0 0, 91% 0, 94% 16px, 100% 16px, 100% 100%, 8% 100%, 5% calc(100% - 16px), 0 calc(100% - 16px)); background: rgba(255,255,255,.78); pointer-events: none; }
+.scroll-intro-card > * { position: relative; z-index: 1; }
+.scroll-intro-card[open] { background: var(--brand-cobalt) !important; box-shadow: 0 22px 55px rgba(11,16,30,.09); }
+.scroll-intro-card[open]::before { background: #f5f5f0; }
 .scroll-intro-card summary { min-height: 122px; padding: 24px 30px; display: grid; grid-template-columns: 58px 1fr 24px; gap: 20px; align-items: center; list-style: none; cursor: pointer; }
 .scroll-intro-card summary::-webkit-details-marker { display: none; }
 .scroll-intro-card summary > span:nth-child(2) { display: grid; gap: 7px; }
@@ -521,7 +528,13 @@ html[data-theme="dark"] .platform-grid img { filter: saturate(.9) brightness(1.1
 .scroll-card-body > a { justify-self: start; color: var(--brand-cobalt); font: 500 9px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
 .scroll-card-body > a b { margin-left: 8px; }
 @keyframes accordion-in { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
-html[data-theme="dark"] .scroll-intro-card, html[data-theme="dark"] .scroll-intro-card[open] { border-color: rgba(255,255,255,.18); background: #404040 !important; color: white; }
+html[data-theme="dark"] .scroll-intro-summary { color: rgba(255,255,255,.66); }
+html[data-theme="dark"] .journey-wheel { color: white; }
+html[data-theme="dark"] .journey-wheel > span { background: #404040; }
+html[data-theme="dark"] .scroll-intro-card { background: rgba(255,255,255,.28) !important; color: white; }
+html[data-theme="dark"] .scroll-intro-card::before { background: #404040; }
+html[data-theme="dark"] .scroll-intro-card[open] { background: var(--brand-cyan) !important; }
+html[data-theme="dark"] .scroll-intro-card[open]::before { background: #404040; }
 html[data-theme="dark"] .scroll-card-body { border-color: rgba(255,255,255,.18); }
 html[data-theme="dark"] .scroll-card-body > p { color: rgba(255,255,255,.7); }
 html[data-theme="dark"] .scroll-card-body li { border-color: rgba(255,255,255,.12); }
@@ -734,6 +747,8 @@ html[data-theme="dark"] .scroll-intro-card:nth-child(3).is-active > div { color:
   .launch-platforms { align-self: flex-start; }
   .hero-frame-bottom { width: 72%; height: 16px; clip-path: polygon(5% 100%, 10% 0, 90% 0, 95% 100%); }
   .scroll-intro { padding: 82px 20px; }
+  .journey-wheel { width: 122px; height: 122px; margin-top: 28px; }
+  .journey-wheel > span { width: 50px; height: 50px; }
   .scroll-intro-card { min-height: 210px; padding: 22px; }
   .scroll-intro-card { min-height: 0; padding: 0; }
   .scroll-intro-card summary { min-height: 104px; padding: 18px; grid-template-columns: 46px 1fr 20px; gap: 14px; }

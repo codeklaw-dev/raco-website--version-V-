@@ -200,6 +200,8 @@ document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe
 
 const scrollStoryCards = [...document.querySelectorAll(".scroll-intro-card")];
 const scrollStorySteps = [...document.querySelectorAll(".scroll-steps span")];
+const journeyWheel = document.querySelector(".journey-wheel");
+const journeyWheelStage = document.querySelector("[data-wheel-stage]");
 if (scrollStoryCards.length) {
   const activateScrollStory = (activeIndex) => {
     scrollStoryCards.forEach((card, index) => {
@@ -209,6 +211,7 @@ if (scrollStoryCards.length) {
       else card.removeAttribute("aria-current");
     });
     scrollStorySteps.forEach((step, index) => step.classList.toggle("is-active", index === activeIndex));
+    if (journeyWheelStage) journeyWheelStage.textContent = String(activeIndex + 1).padStart(2, "0");
   };
   const scrollStoryObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -219,4 +222,20 @@ if (scrollStoryCards.length) {
     if (card.open) activateScrollStory(index);
   }));
   scrollStoryCards.forEach((card) => scrollStoryObserver.observe(card));
+
+  if (journeyWheel) {
+    const journeySection = journeyWheel.closest(".scroll-intro");
+    let wheelFrame;
+    const updateJourneyWheel = () => {
+      const rect = journeySection.getBoundingClientRect();
+      const travel = rect.height + window.innerHeight;
+      const progress = Math.max(0, Math.min(1, (window.innerHeight - rect.top) / travel));
+      journeyWheel.style.setProperty("--wheel-rotation", `${progress * 540}deg`);
+      wheelFrame = null;
+    };
+    window.addEventListener("scroll", () => {
+      if (!wheelFrame) wheelFrame = window.requestAnimationFrame(updateJourneyWheel);
+    }, { passive: true });
+    updateJourneyWheel();
+  }
 }
