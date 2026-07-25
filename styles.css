@@ -259,9 +259,9 @@ html[data-theme="dark"] .platform-grid img { filter: saturate(.9) brightness(1.1
 .service-accordion details > div p { margin: 0 0 18px; max-width: 500px; color: rgba(255,255,255,.58); font-size: 12px; line-height: 1.6; }
 .service-accordion details > div a { color: var(--acid); font: 500 9px var(--mono); text-transform: uppercase; }
 
-.facts { display: grid; grid-template-columns: .7fr 1.3fr; gap: 7vw; }
-.facts-grid { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line-light); border-left: 1px solid var(--line-light); }
-.facts-grid div { min-height: 220px; padding: 30px; display: flex; flex-direction: column; justify-content: space-between; border-right: 1px solid var(--line-light); border-bottom: 1px solid var(--line-light); }
+.facts { min-height: 820px; padding-top: 180px; padding-bottom: 180px; display: grid; grid-template-columns: .7fr 1.3fr; gap: 7vw; align-items: center; position: relative; clip-path: polygon(0 0, 34% 0, 37% 44px, 63% 44px, 66% 0, 100% 0, 100% 100%, 66% 100%, 63% calc(100% - 44px), 37% calc(100% - 44px), 34% 100%, 0 100%); background: #404040; }
+.facts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; border: 0; background: rgba(255,255,255,.16); }
+.facts-grid div { min-height: 220px; padding: 30px; display: flex; flex-direction: column; justify-content: space-between; border: 0; background: #404040; }
 .facts-grid div:nth-child(1) { box-shadow: inset 5px 0 0 var(--brand-green); }
 .facts-grid div:nth-child(2) { box-shadow: inset 5px 0 0 var(--brand-orange); }
 .facts-grid div:nth-child(3) { box-shadow: inset 5px 0 0 var(--brand-magenta); }
@@ -767,6 +767,7 @@ html[data-theme="dark"] .scroll-intro-card:nth-child(3).is-active > div { color:
   .expertise-group { border-right: 0; border-bottom: 1px solid var(--line); }
   .facts-grid { grid-template-columns: 1fr 1fr; }
   .facts-grid div { min-height: 160px; padding: 20px; }
+  .facts { min-height: 0; padding-top: 124px; padding-bottom: 124px; clip-path: polygon(0 0, 25% 0, 31% 24px, 69% 24px, 75% 0, 100% 0, 100% 100%, 75% 100%, 69% calc(100% - 24px), 31% calc(100% - 24px), 25% 100%, 0 100%); }
   .story-image { min-height: 500px; }
   .story-copy { padding: 78px 20px; }
   .lab-media { min-height: 460px; }
