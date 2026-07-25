@@ -215,5 +215,8 @@ if (scrollStoryCards.length) {
       if (entry.isIntersecting) activateScrollStory(scrollStoryCards.indexOf(entry.target));
     });
   }, { rootMargin: "-32% 0px -48% 0px", threshold: 0 });
+  scrollStoryCards.forEach((card, index) => card.addEventListener("toggle", () => {
+    if (card.open) activateScrollStory(index);
+  }));
   scrollStoryCards.forEach((card) => scrollStoryObserver.observe(card));
 }

@@ -499,6 +499,34 @@ html[data-theme="dark"] .platform-grid img { filter: saturate(.9) brightness(1.1
 .scroll-intro-card:nth-child(3).is-active { background: linear-gradient(110deg, #ff3db8, #7a3cff); color: white; }
 .scroll-intro-card:nth-child(3).is-active > div { color: rgba(255,255,255,.74); }
 .scroll-intro-card:nth-child(4).is-active { background: linear-gradient(110deg, #00e0ff, #f5f4ef 84%); }
+.scroll-intro-track { gap: 12px; border-top: 0; }
+.scroll-intro-card { min-height: 0; padding: 0; display: block; border: 1px solid rgba(11,16,30,.2); clip-path: polygon(0 0, 91% 0, 94% 16px, 100% 16px, 100% 100%, 8% 100%, 5% calc(100% - 16px), 0 calc(100% - 16px)); background: rgba(255,255,255,.58) !important; opacity: 1; transform: none; transition: background .35s ease, border-color .35s ease, box-shadow .35s ease; }
+.scroll-intro-card[open] { border-color: rgba(11,16,30,.46); background: #f5f5f0 !important; box-shadow: 0 22px 55px rgba(11,16,30,.09); }
+.scroll-intro-card summary { min-height: 122px; padding: 24px 30px; display: grid; grid-template-columns: 58px 1fr 24px; gap: 20px; align-items: center; list-style: none; cursor: pointer; }
+.scroll-intro-card summary::-webkit-details-marker { display: none; }
+.scroll-intro-card summary > span:nth-child(2) { display: grid; gap: 7px; }
+.scroll-intro-card summary small { font: 500 9px var(--mono); letter-spacing: .1em; }
+.scroll-intro-card summary strong { font-size: clamp(23px,2.2vw,35px); font-weight: 500; letter-spacing: -.045em; }
+.scroll-intro-card summary > i { font: 400 22px var(--mono); font-style: normal; transition: transform .3s ease; }
+.scroll-intro-card[open] summary > i { transform: rotate(45deg); }
+.scroll-intro-card[open] .scroll-icon { background: var(--ink); color: var(--paper); }
+.scroll-card-body { margin: 0 30px 30px 108px; padding: 28px 0 6px; display: grid; grid-template-columns: 1.05fr .95fr; gap: 24px 46px; border-top: 1px solid rgba(11,16,30,.18); animation: accordion-in .35s ease both; }
+.scroll-card-body > p { margin: 0; color: rgba(11,16,30,.68); font-size: 14px; line-height: 1.7; }
+.scroll-card-body ul { grid-row: span 2; margin: 0; padding: 0; list-style: none; }
+.scroll-card-body li { padding: 10px 0 10px 18px; position: relative; border-bottom: 1px solid rgba(11,16,30,.12); font-size: 12px; line-height: 1.5; }
+.scroll-card-body li::before { content: "◇"; position: absolute; left: 0; color: var(--brand-orange); }
+.scroll-card-body > div { padding: 15px; display: grid; gap: 7px; background: rgba(11,16,30,.05); }
+.scroll-card-body > div span { font: 500 8px var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+.scroll-card-body > div strong { font-size: 12px; line-height: 1.5; }
+.scroll-card-body > a { justify-self: start; color: var(--brand-cobalt); font: 500 9px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+.scroll-card-body > a b { margin-left: 8px; }
+@keyframes accordion-in { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+html[data-theme="dark"] .scroll-intro-card, html[data-theme="dark"] .scroll-intro-card[open] { border-color: rgba(255,255,255,.18); background: #404040 !important; color: white; }
+html[data-theme="dark"] .scroll-card-body { border-color: rgba(255,255,255,.18); }
+html[data-theme="dark"] .scroll-card-body > p { color: rgba(255,255,255,.7); }
+html[data-theme="dark"] .scroll-card-body li { border-color: rgba(255,255,255,.12); }
+html[data-theme="dark"] .scroll-card-body > div { background: rgba(255,255,255,.07); }
+html[data-theme="dark"] .scroll-card-body > a { color: var(--acid); }
 .facts-grid div { box-shadow: none !important; }
 .facts-grid strong { color: var(--brand-magenta); }
 .facts-grid div:nth-child(even) strong { color: var(--brand-orange); }
@@ -707,6 +735,10 @@ html[data-theme="dark"] .scroll-intro-card:nth-child(3).is-active > div { color:
   .hero-frame-bottom { width: 72%; height: 16px; clip-path: polygon(5% 100%, 10% 0, 90% 0, 95% 100%); }
   .scroll-intro { padding: 82px 20px; }
   .scroll-intro-card { min-height: 210px; padding: 22px; }
+  .scroll-intro-card { min-height: 0; padding: 0; }
+  .scroll-intro-card summary { min-height: 104px; padding: 18px; grid-template-columns: 46px 1fr 20px; gap: 14px; }
+  .scroll-card-body { margin: 0 18px 24px; padding-top: 22px; grid-template-columns: 1fr; gap: 18px; }
+  .scroll-card-body ul { grid-row: auto; }
   .section, .section-dark { padding: 86px 20px; }
   .section-heading { grid-template-columns: 1fr; gap: 28px; margin-bottom: 44px; }
   .section-heading h2, .facts h2, .ai-core h2, .about h2, .faq h2, .contact h2 { font-size: clamp(43px,12.7vw,62px); }
@@ -757,6 +789,7 @@ html[data-theme="dark"] .scroll-intro-card:nth-child(3).is-active > div { color:
   .hero-proof { grid-template-columns: 1fr; }
   .hero-proof div { min-height: 58px; }
   .scroll-intro-card { grid-template-columns: 46px 1fr; gap: 10px 14px; }
+  .scroll-intro-card { display: block; }
   .scroll-icon { width: 42px; height: 42px; }
   .service-accordion summary { padding: 20px 16px; grid-template-columns: 28px 1fr 18px; }
   .service-accordion details > div { padding: 0 16px 24px 58px; }
