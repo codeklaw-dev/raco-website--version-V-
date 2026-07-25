@@ -1,0 +1,13 @@
+{
+  "name": "raco-website",
+  "private": true,
+  "scripts": {
+    "build:globe": "esbuild components/ui/globe.ts --bundle --minify --format=iife --outfile=assets/globe.js"
+  },
+  "dependencies": {
+    "cobe": "^0.6.5"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  }
+}

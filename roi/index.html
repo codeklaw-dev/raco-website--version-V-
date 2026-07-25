@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Estimate the annual operational value of automating a repeatable workflow with RACO AI." />
+    <title>Workflow ROI — RACO AI</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css?v=20260725ac" />
+    <script src="/site-shell.js?v=20260725ac" defer></script>
+    <script src="/app.js?v=20260725ac" defer></script>
+    <style>
+      .roi-page { min-height: 100vh; padding: 130px clamp(20px, 6vw, 92px) 80px; background: #07110d; color: white; }
+      .roi-heading { display: grid; grid-template-columns: 1.25fr .75fr; gap: 50px; align-items: end; padding-bottom: 55px; border-bottom: 1px solid rgba(255,255,255,.15); }
+      .roi-heading h1 { font-size: clamp(52px, 7vw, 104px); }
+      .roi-heading p { color: rgba(255,255,255,.55); line-height: 1.7; }
+      .calculator { margin-top: 50px; display: grid; grid-template-columns: 1fr .85fr; gap: 14px; }
+      .calc-inputs, .calc-result { padding: clamp(24px, 4vw, 50px); border: 1px solid rgba(255,255,255,.15); }
+      .calc-inputs { display: grid; gap: 28px; }
+      label { display: grid; gap: 10px; color: rgba(255,255,255,.5); font: 500 10px var(--mono); text-transform: uppercase; }
+      input { width: 100%; padding: 14px 0; border: 0; border-bottom: 1px solid rgba(255,255,255,.22); outline: 0; background: transparent; color: white; font: 500 25px var(--mono); }
+      input:focus { border-color: #b7ff43; }
+      .calc-result { background: #b7ff43; color: #07110d; display: flex; flex-direction: column; justify-content: space-between; }
+      .calc-result > span { font: 500 10px var(--mono); text-transform: uppercase; }
+      .calc-result strong { display: block; margin: 35px 0 8px; font: 500 clamp(42px, 6vw, 82px) var(--mono); letter-spacing: -.07em; }
+      .calc-result p { margin: 0; font-size: 13px; }
+      .calc-result a { margin-top: 70px; display: flex; justify-content: space-between; padding-top: 15px; border-top: 1px solid #07110d; font: 500 10px var(--mono); text-transform: uppercase; }
+      .calc-note { margin-top: 18px; color: rgba(255,255,255,.35); font: 400 9px var(--mono); line-height: 1.7; }
+      @media (max-width: 760px) { .roi-heading, .calculator { grid-template-columns: 1fr; } .roi-heading h1 { font-size: 54px; } }
+    </style>
+  </head>
+  <body class="inner-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div data-site-header></div>
+    <main class="roi-page" id="main">
+      <div class="roi-heading">
+        <div><p class="eyebrow"><span></span> Workflow value estimator</p><h1>Find the value<br /><em>inside the work.</em></h1></div>
+        <p>A focused first estimate for one repeatable workflow. A RACO discovery session maps dependencies, risk and the full implementation case.</p>
+      </div>
+      <div class="calculator">
+        <form class="calc-inputs" id="roi-form">
+          <label>People involved<input id="people" type="number" min="1" max="10000" value="8" /></label>
+          <label>Hours per person / week<input id="hours" type="number" min="1" max="80" value="20" /></label>
+          <label>Fully loaded hourly cost (£)<input id="cost" type="number" min="1" max="1000" value="32" /></label>
+          <label>Estimated automation potential (%)<input id="potential" type="number" min="5" max="95" value="65" /></label>
+        </form>
+        <section class="calc-result" aria-live="polite">
+          <div><span>Estimated annual capacity value</span><strong id="annual-value">£173,056</strong><p id="hours-value">5,408 hours released every year</p></div>
+          <a href="mailto:hello@racoai.io?subject=Workflow%20ROI%20discussion">Validate this opportunity <span>↗</span></a>
+        </section>
+      </div>
+      <p class="calc-note">Indicative estimate only. Based on 52 working weeks and excludes implementation cost, risk adjustment and productivity ramp.</p>
+    </main>
+    <script>
+      const fields = ["people", "hours", "cost", "potential"].map((id) => document.getElementById(id));
+      const money = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP", maximumFractionDigits: 0 });
+      function calculate() {
+        const [people, hours, cost, potential] = fields.map((field) => Number(field.value) || 0);
+        const releasedHours = people * hours * 52 * (potential / 100);
+        document.getElementById("annual-value").textContent = money.format(releasedHours * cost);
+        document.getElementById("hours-value").textContent = `${Math.round(releasedHours).toLocaleString("en-GB")} hours released every year`;
+      }
+      fields.forEach((field) => field.addEventListener("input", calculate));
+      calculate();
+    </script>
+  </body>
+</html>

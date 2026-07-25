@@ -1,0 +1,65 @@
+const headerTarget = document.querySelector("[data-site-header]");
+const footerTarget = document.querySelector("[data-site-footer]");
+
+if (headerTarget) {
+  headerTarget.outerHTML = `
+    <header class="site-header" data-header>
+      <a class="brand" href="/" aria-label="RACO AI home">
+        <img class="brand-logo" src="/assets/raco-wordmark.svg?v=20260725ac" alt="RACO AI" />
+      </a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <details class="nav-group">
+          <summary>Expertise <span>⌄</span></summary>
+          <div class="mega-menu mega-expertise">
+            <div class="mega-intro"><span>01 / EXPERTISE</span><h2>Engineering depth.<br />Intelligence built in.</h2><a href="/expertise/">View expertise <b>↗</b></a></div>
+            <div class="mega-column"><p>Engineering</p><a href="/expertise/bespoke-software/">Bespoke software</a><a href="/expertise/product-development/">SaaS &amp; product development</a><a href="/expertise/web-mobile/">Web &amp; mobile applications</a><a href="/expertise/cloud-modernisation/">Cloud &amp; modernisation</a><a href="/expertise/qa-devops/">QA &amp; DevOps</a></div>
+            <div class="mega-column"><p>AI &amp; data</p><a href="/expertise/ai-transformation/">AI transformation</a><a href="/expertise/private-ai-rag/">Private AI &amp; RAG</a><a href="/expertise/agent-development/">Agent development</a><a href="/expertise/voice-computer-vision/">Voice &amp; computer vision</a><a href="/expertise/data-engineering/">Data engineering</a></div>
+            <div class="mega-column"><p>Business solutions</p><a href="/engagement-models/enterprise-delivery/">Enterprise delivery</a><a href="/engagement-models/startup-product-teams/">Startup product teams</a><a href="/engagement-models/dedicated-engineering/">Dedicated engineering pods</a><a href="/engagement-models/managed-ai/">Managed AI operations</a><a href="/roi/">Workflow ROI estimator</a></div>
+            <div class="mega-column"><p>Explore</p><a href="/software-development/">All engineering services</a><a href="/solutions/ai/">All AI services</a><a href="/engagement-models/">All engagement models</a><a href="/work/">Selected work</a><a href="/contact/">Start a conversation</a></div>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>Industries <span>⌄</span></summary>
+          <div class="mega-menu mega-industries">
+            <div class="mega-intro"><span>02 / INDUSTRIES</span><h2>Technology shaped by<br />operating context.</h2><a href="/industries/">View industries <b>↗</b></a></div>
+            <div class="mega-industry-links"><a href="/industries/healthcare/">Healthcare</a><a href="/industries/legal/">Legal</a><a href="/industries/financial-services/">Financial services</a><a href="/industries/manufacturing/">Manufacturing</a><a href="/industries/retail-ecommerce/">Retail &amp; ecommerce</a><a href="/industries/logistics/">Logistics</a><a href="/industries/real-estate/">Real estate</a><a href="/industries/hospitality/">Hospitality</a><a href="/industries/education/">Education</a><a href="/industries/construction/">Construction</a></div>
+            <div class="mega-feature"><img src="/assets/raco-industrial-ai.jpg" alt="Engineers operating an intelligent inspection line" /><p>Applied industrial AI</p><span>Software intelligence in the physical world.</span></div>
+          </div>
+        </details>
+        <a href="/engagement-models/">How we work</a>
+        <a href="/work/">Work</a>
+        <a href="/raco-lab/">RACO Lab ↗</a>
+        <a href="/company/">Company</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch colour theme"><span class="theme-toggle-icon" aria-hidden="true">◐</span><span class="theme-toggle-label">Theme</span></button>
+      <a class="header-cta" href="/contact/">Start a project <span>↗</span></a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation"><span></span><span></span><span class="sr-only">Open menu</span></button>
+      <nav class="mobile-nav" id="mobile-menu" aria-label="Primary navigation menu">
+        <div class="nav-drawer-intro"><span>01 / NAVIGATION</span><h2>Engineering depth.<br /><em>Intelligence built in.</em></h2><p>Software delivery and private AI, connected through one accountable partner.</p><a class="nav-drawer-primary" href="/contact/">Start a project</a></div>
+        <div class="nav-drawer-column"><p>Expertise</p><a href="/expertise/">All expertise</a><a href="/software-development/">Software engineering</a><a href="/solutions/ai/">AI &amp; data solutions</a><a href="/expertise/private-ai-rag/">Private AI &amp; RAG</a><a href="/expertise/agent-development/">Agent development</a></div>
+        <div class="nav-drawer-column"><p>Explore</p><a href="/industries/">Industries</a><a href="/engagement-models/">How we work</a><a href="/work/">Selected work</a><a href="/company/">Company</a><a href="/raco-lab/">RACO Lab ↗</a></div>
+        <a class="nav-drawer-feature" href="/industries/manufacturing/"><img src="/assets/raco-industrial-ai.jpg" alt="Engineers operating an intelligent inspection line" /><span>Applied intelligence / Featured</span><strong>From software to the physical world.</strong><i>Explore the work ↗</i></a>
+      </nav>
+    </header>`;
+}
+
+if (footerTarget) {
+  footerTarget.outerHTML = `
+    <section class="prefooter-cta reveal" aria-label="Start a project with RACO">
+      <video class="ambient-video" autoplay muted loop playsinline preload="metadata" poster="/assets/raco-one-cover.jpg" aria-hidden="true"><source src="/assets/raco-fluid-loop.mp4" type="video/mp4" /></video>
+      <a href="/contact/">
+        <div class="prefooter-cta-copy"><p>Have something ambitious in mind?</p><h2>Let’s build what<br /><em>comes next.</em> ↗</h2></div>
+        <div class="prefooter-marquee" aria-hidden="true"><span>Software engineering</span><span>Private AI</span><span>Product delivery</span><span>Software engineering</span><span>Private AI</span><span>Product delivery</span><span>Software engineering</span><span>Private AI</span><span>Product delivery</span></div>
+      </a>
+    </section>
+    <footer>
+      <div class="footer-top"><a class="brand brand-footer" href="/" aria-label="RACO AI home"><img class="brand-logo" src="/assets/raco-wordmark.svg?v=20260725ac" alt="RACO AI" /></a><p>Software engineering and private AI systems for organisations building what comes next.</p></div>
+      <div class="footer-grid">
+        <div><span>Expertise</span><a href="/expertise/">All expertise</a><a href="/software-development/">Software development</a><a href="/solutions/ai/">AI &amp; data</a><a href="/engagement-models/">Engagement models</a><a href="/roi/">ROI estimator</a></div>
+        <div><span>Explore</span><a href="/industries/">Industries</a><a href="/work/">Selected work</a><a href="/insights/">Insights</a><a href="/raco-lab/">RACO Lab ↗</a><a href="/company/">About RACO</a></div>
+        <div><span>Engineering hubs</span><p>Bristol, United Kingdom</p><p>Dhaka, Bangladesh</p></div>
+        <div><span>Start here</span><a href="mailto:hello@racoai.io">hello@racoai.io</a><a href="/contact/">Tell us about a project</a></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 RACO AI Technologies</span><span>Bristol · Dhaka</span><a href="/contact/">Privacy &amp; contact</a></div>
+    </footer>`;
+}
