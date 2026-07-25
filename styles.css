@@ -638,6 +638,21 @@ html[data-theme="dark"] .mega-column a, html[data-theme="dark"] .mega-industry-l
 html[data-theme="dark"] .mega-intro h2, html[data-theme="dark"] .mega-intro a, html[data-theme="dark"] .mega-feature p { color: #fff; }
 html[data-theme="dark"] .mega-feature span { color: #aeb4b1; }
 html[data-theme="dark"] .tab-list button[aria-selected="true"] { background: var(--acid); color: var(--ink); }
+html[data-theme="dark"] .expertise { background: #0a0a0a; color: white; }
+html[data-theme="dark"] .expertise .section-heading > p,
+html[data-theme="dark"] .expertise .eyebrow,
+html[data-theme="dark"] .expertise .tab-list button { color: rgba(255,255,255,.62); }
+html[data-theme="dark"] .expertise-switcher,
+html[data-theme="dark"] .expertise .tab-list,
+html[data-theme="dark"] .expertise .tab-list button,
+html[data-theme="dark"] .expertise .service-accordion details,
+html[data-theme="dark"] .expertise .expertise-group { border-color: rgba(255,255,255,.18); }
+html[data-theme="dark"] .expertise .service-accordion summary { background: #0a0a0a; color: white; }
+html[data-theme="dark"] .expertise .service-accordion summary:hover { background: #181818; }
+html[data-theme="dark"] .expertise .service-accordion details[open] summary,
+html[data-theme="dark"] .expertise .service-accordion details > div { background: #151515; }
+html[data-theme="dark"] .expertise .platform-grid span { border-color: rgba(255,255,255,.18); background: #151515; color: white; }
+html[data-theme="dark"] .expertise .platform-grid span:hover { background: #202020; }
 html[data-theme="dark"] .contact, html[data-theme="dark"] .scroll-intro { color: var(--ink); }
 html[data-theme="dark"] .engagement-list summary:hover,
 html[data-theme="dark"] .industry-directory a:hover,
