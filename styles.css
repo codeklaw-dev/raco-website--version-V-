@@ -211,6 +211,15 @@ h1 em, h2 em { color: var(--acid); font-style: normal; font-weight: 400; }
 .expertise-group > p { margin: 0 0 32px; color: var(--muted); font: 500 9px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
 .expertise-group a, .expertise-group > span { min-height: 56px; padding: 15px 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line); font-size: clamp(15px,1.35vw,20px); letter-spacing: -.02em; }
 .expertise-group a b { font: 400 11px var(--mono); color: #57962e; }
+.platform-ecosystem { grid-template-columns: 1fr; }
+.platform-ecosystem .expertise-group { padding: 30px 32px; border-right: 0; border-bottom: 1px solid var(--line); }
+.platform-ecosystem .expertise-group:last-child { border-bottom: 0; }
+.platform-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.platform-grid span { min-height: 104px; padding: 17px; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; gap: 18px; border: 1px solid color-mix(in srgb, var(--ink) 13%, transparent); border-radius: 18px; background: color-mix(in srgb, var(--paper) 82%, transparent); font-size: 14px; transition: transform .3s ease, background .3s ease, border-color .3s ease; }
+.platform-grid span:hover { transform: translateY(-5px); border-color: color-mix(in srgb, var(--ink) 30%, transparent); background: var(--paper); }
+.platform-grid img, .platform-private { width: 31px; height: 31px; object-fit: contain; display: block; }
+.platform-private { border-radius: 9px; background: var(--ink); color: var(--paper); font-style: normal; display: grid; place-items: center; font-size: 18px; }
+html[data-theme="dark"] .platform-grid img { filter: saturate(.9) brightness(1.14); }
 .service-accordion { grid-template-columns: repeat(2,1fr); min-height: auto; }
 .service-accordion details { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .service-accordion summary { min-height: 118px; padding: 24px 28px; display: grid; grid-template-columns: 34px 1fr 24px; gap: 14px; align-items: center; list-style: none; cursor: pointer; transition: background .25s ease, color .25s ease; }
@@ -640,6 +649,7 @@ html[data-theme="dark"] .scroll-intro-card:nth-child(3).is-active > div { color:
 }
 
 @media (max-width: 840px) {
+  .platform-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .site-header { height: 64px; padding: 0 14px; }
   .desktop-nav, .header-cta { display: none; }
   .theme-toggle { min-width: 40px; width: 40px; height: 40px; right: 14px; padding: 0; }
