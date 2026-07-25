@@ -29,6 +29,49 @@ const themeToggle = document.querySelector(".theme-toggle");
 const pendingProductLink = document.querySelector('[data-product-url="pending"]');
 const workFilters = document.querySelector("[data-work-filters]");
 const pendingExternalLink = document.querySelector('[data-external-url="pending"]');
+const heroCarousel = document.querySelector("[data-hero-carousel]");
+
+if (heroCarousel) {
+  const heroSlides = [...heroCarousel.querySelectorAll("[data-hero-slide]")];
+  const heroDots = [...heroCarousel.querySelectorAll("[data-hero-dot]")];
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let heroIndex = 0;
+  let heroTimer;
+
+  const showHeroSlide = (nextIndex, restart = true) => {
+    heroIndex = (nextIndex + heroSlides.length) % heroSlides.length;
+    heroSlides.forEach((slide, index) => {
+      const active = index === heroIndex;
+      slide.classList.toggle("is-active", active);
+      slide.setAttribute("aria-hidden", String(!active));
+      slide.inert = !active;
+    });
+    heroDots.forEach((dot, index) => {
+      const active = index === heroIndex;
+      dot.classList.toggle("is-active", active);
+      if (active) dot.setAttribute("aria-current", "true");
+      else dot.removeAttribute("aria-current");
+    });
+    if (restart && !reduceMotion) startHeroTimer();
+  };
+
+  const startHeroTimer = () => {
+    window.clearInterval(heroTimer);
+    heroTimer = window.setInterval(() => showHeroSlide(heroIndex + 1, false), 7000);
+  };
+
+  heroCarousel.querySelector("[data-hero-prev]")?.addEventListener("click", () => showHeroSlide(heroIndex - 1));
+  heroCarousel.querySelector("[data-hero-next]")?.addEventListener("click", () => showHeroSlide(heroIndex + 1));
+  heroDots.forEach((dot) => dot.addEventListener("click", () => showHeroSlide(Number(dot.dataset.heroDot))));
+  heroCarousel.addEventListener("mouseenter", () => window.clearInterval(heroTimer));
+  heroCarousel.addEventListener("mouseleave", () => { if (!reduceMotion) startHeroTimer(); });
+  heroCarousel.addEventListener("focusin", () => window.clearInterval(heroTimer));
+  heroCarousel.addEventListener("focusout", (event) => {
+    if (!heroCarousel.contains(event.relatedTarget) && !reduceMotion) startHeroTimer();
+  });
+  showHeroSlide(0, false);
+  if (!reduceMotion) startHeroTimer();
+}
 
 const syncThemeControl = () => {
   if (!themeToggle) return;

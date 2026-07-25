@@ -106,24 +106,42 @@
     </header>
 
     <main id="main">
-      <section class="hero" id="top">
-        <img class="hero-image" src="assets/raco-hero-engineering.jpg" alt="A senior engineering team reviewing an AI-enabled system" fetchpriority="high" />
-        <div class="hero-wash"></div>
-        <div class="hero-grid" aria-hidden="true"></div>
-        <div class="hero-content reveal">
-          <p class="eyebrow"><span></span> Software engineering · Private AI · Global delivery</p>
-          <h1>AI-enabled software engineering, <em>built for what comes next.</em></h1>
-          <p class="hero-copy">End-to-end software delivery and private AI systems for organisations that need ambitious technology to work in the real world.</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="/contact/">Book a discovery call <span>↗</span></a>
-            <a class="button button-ghost" href="/expertise/">Explore our expertise <span>↗</span></a>
+      <section class="hero hero-carousel" id="top" data-hero-carousel aria-roledescription="carousel" aria-label="RACO highlights">
+        <article class="hero-slide is-active" data-hero-slide aria-hidden="false">
+          <img class="hero-image" src="assets/raco-hero-engineering.jpg" alt="A senior engineering team reviewing an AI-enabled system" fetchpriority="high" />
+          <div class="hero-wash"></div>
+          <div class="hero-grid" aria-hidden="true"></div>
+          <div class="hero-content reveal">
+            <p class="eyebrow"><span></span> Software engineering · Private AI · Global delivery</p>
+            <h1>AI-enabled software engineering, <em>built for what comes next.</em></h1>
+            <p class="hero-copy">End-to-end software delivery and private AI systems for organisations that need ambitious technology to work in the real world.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="/contact/">Book a discovery call <span>↗</span></a>
+              <a class="button button-ghost" href="/expertise/">Explore our expertise <span>↗</span></a>
+            </div>
           </div>
-        </div>
-        <div class="hero-proof reveal" aria-label="RACO delivery strengths">
-          <div><i>✓</i><span>Full-cycle product and platform delivery</span></div>
-          <div><i>✓</i><span>Private models, agents and automation</span></div>
-          <div><i>✓</i><span>Teams across Bristol and Dhaka</span></div>
-          <div><i>✓</i><span>Security and data sovereignty by design</span></div>
+          <div class="hero-proof reveal" aria-label="RACO delivery strengths">
+            <div><i>✓</i><span>Full-cycle product and platform delivery</span></div>
+            <div><i>✓</i><span>Private models, agents and automation</span></div>
+            <div><i>✓</i><span>Teams across Bristol and Dhaka</span></div>
+            <div><i>✓</i><span>Security and data sovereignty by design</span></div>
+          </div>
+        </article>
+        <article class="hero-slide hero-slide-launch" data-hero-slide aria-hidden="true">
+          <div class="launch-copy">
+            <p class="eyebrow"><span></span> RACO app launch · macOS + iOS</p>
+            <h1>Your intelligent workspace, <em>now across every screen.</em></h1>
+            <p class="hero-copy">Meet the new RACO experience for Mac and iPhone—designed to keep powerful AI close to the work, wherever it happens.</p>
+            <div class="hero-actions"><a class="button button-primary" href="#products">Discover the app <span>↗</span></a><span class="launch-platforms">Available on macOS &amp; iOS</span></div>
+          </div>
+          <div class="launch-visual"><img src="/assets/raco-app-launch.png" alt="RACO app displayed on Mac, laptop and iPhone" /></div>
+          <div class="launch-ribbon" aria-hidden="true"><span>RACO APP / INTELLIGENCE EVERYWHERE</span><span>MACOS · IOS · AVAILABLE NOW</span></div>
+        </article>
+        <button class="hero-click-zone hero-click-prev" type="button" data-hero-prev aria-label="Previous hero slide"></button>
+        <button class="hero-click-zone hero-click-next" type="button" data-hero-next aria-label="Next hero slide"></button>
+        <div class="hero-pagination" role="group" aria-label="Choose hero slide">
+          <button class="is-active" type="button" data-hero-dot="0" aria-label="Show engineering slide" aria-current="true"></button>
+          <button type="button" data-hero-dot="1" aria-label="Show app launch slide"></button>
         </div>
       </section>
 

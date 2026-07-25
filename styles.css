@@ -134,7 +134,9 @@ html[data-theme="dark"] .nav-drawer-intro { background: #404040; }
 html[data-theme="dark"] .nav-drawer-column a, html[data-theme="dark"] .nav-drawer-feature { color: #c7cbc9; }
 html[data-theme="dark"] .nav-drawer-column a:hover { color: white; }
 
-.hero { min-height: 920px; position: relative; display: grid; align-content: end; overflow: hidden; padding: 150px clamp(24px, 5.7vw, 92px) 58px; color: white; background: var(--brand-cobalt); }
+.hero { min-height: 920px; position: relative; overflow: hidden; color: white; background: var(--brand-cobalt); }
+.hero-slide { position: absolute; inset: 0; padding: 150px clamp(24px, 5.7vw, 92px) 58px; display: grid; align-content: end; opacity: 0; visibility: hidden; transform: scale(1.015); transition: opacity .75s ease, transform 1.1s cubic-bezier(.2,.7,.2,1), visibility 0s .75s; }
+.hero-slide.is-active { z-index: 1; opacity: 1; visibility: visible; transform: scale(1); transition-delay: 0s; }
 .hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: brightness(1.04); }
 .hero-wash { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(38,38,38,.9) 0%, rgba(38,38,38,.68) 42%, rgba(38,38,38,.16) 78%, rgba(38,38,38,.06) 100%), linear-gradient(0deg, rgba(35,35,35,.6), transparent 54%); }
 .hero-grid { position: absolute; inset: 0; opacity: .1; background-image: linear-gradient(rgba(255,255,255,.28) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.22) 1px, transparent 1px); background-size: 88px 88px; mask-image: linear-gradient(90deg, black, transparent 66%); }
@@ -163,6 +165,23 @@ h1 em, h2 em { color: var(--acid); font-style: normal; font-weight: 400; }
 .hero-proof div:nth-child(4) { background: rgba(97,164,103,.24); }
 .hero-proof i { color: var(--acid); font-style: normal; }
 .hero-proof span { font: 400 10px/1.5 var(--mono); color: rgba(255,255,255,.72); text-transform: uppercase; }
+.hero-click-zone { position: absolute; z-index: 7; top: 76px; bottom: 0; width: 10%; padding: 0; border: 0; background: transparent; cursor: pointer; }
+.hero-click-prev { left: 0; cursor: w-resize; }
+.hero-click-next { right: 0; cursor: e-resize; }
+.hero-click-zone:focus-visible { outline: 1px solid rgba(255,255,255,.72); outline-offset: -8px; }
+.hero-pagination { position: absolute; z-index: 8; left: 50%; bottom: 28px; display: flex; gap: 9px; transform: translateX(-50%); }
+.hero-pagination button { width: 8px; height: 8px; padding: 0; border: 1px solid rgba(255,255,255,.72); border-radius: 50%; background: transparent; cursor: pointer; transition: width .3s ease, border-radius .3s ease, background .3s ease; }
+.hero-pagination button.is-active { width: 30px; border-radius: 8px; background: white; }
+.hero-slide-launch { padding: 0; grid-template-columns: minmax(360px,.82fr) minmax(520px,1.18fr); align-items: stretch; align-content: stretch; background: #0b101e; }
+.launch-copy { z-index: 2; padding: 190px 4vw 125px clamp(24px,5.7vw,92px); display: flex; flex-direction: column; justify-content: center; background: radial-gradient(circle at 18% 48%, rgba(122,60,255,.28), transparent 45%), #0b101e; }
+.launch-copy h1 { max-width: 720px; font-size: clamp(58px,6.4vw,103px); }
+.launch-copy h1 em { color: #b28ffa; }
+.launch-copy .hero-copy { max-width: 580px; }
+.launch-platforms { align-self: center; color: rgba(255,255,255,.65); font: 500 9px var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+.launch-visual { position: relative; min-width: 0; overflow: hidden; }
+.launch-visual::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #0b101e 0%, transparent 25%), linear-gradient(0deg, rgba(11,16,30,.45), transparent 32%); pointer-events: none; }
+.launch-visual img { width: 100%; height: 100%; object-fit: cover; object-position: 58% center; }
+.launch-ribbon { position: absolute; z-index: 3; left: 0; right: 0; bottom: 0; min-height: 58px; padding: 0 clamp(24px,5.7vw,92px); display: flex; align-items: center; justify-content: space-between; gap: 20px; border-top: 1px solid rgba(255,255,255,.3); background: rgba(11,16,30,.58); backdrop-filter: blur(16px); color: rgba(255,255,255,.68); font: 500 9px var(--mono); letter-spacing: .12em; }
 
 .scroll-intro { padding: 118px clamp(24px,5.7vw,92px); display: grid; grid-template-columns: .72fr 1.28fr; gap: 8vw; background: var(--brand-white); color: var(--ink); overflow: hidden; }
 .scroll-intro-lead { position: sticky; top: 130px; align-self: start; }
@@ -663,7 +682,8 @@ html[data-theme="dark"] .scroll-intro-card:nth-child(3).is-active > div { color:
   .nav-drawer-intro h2 { font-size: 42px; }
   .nav-drawer-column a { padding: 16px 0; font-size: 16px; }
   .nav-drawer-feature { min-height: 390px; }
-  .hero { min-height: 850px; padding: 130px 20px 28px; }
+  .hero { min-height: 850px; }
+  .hero-slide { padding: 130px 20px 28px; }
   .hero-image { object-position: 63% center; }
   .hero-wash { background: linear-gradient(0deg, rgba(38,38,38,.92) 0%, rgba(38,38,38,.68) 70%, rgba(38,38,38,.22)); }
   h1 { font-size: clamp(52px,14.7vw,78px); }
@@ -671,6 +691,18 @@ html[data-theme="dark"] .scroll-intro-card:nth-child(3).is-active > div { color:
   .hero-actions { flex-direction: column; align-items: flex-start; }
   .hero-proof { grid-template-columns: 1fr 1fr; margin-top: 42px; }
   .hero-proof div { min-height: 74px; padding: 12px; }
+  .hero-click-zone { width: 13%; }
+  .hero-pagination { bottom: 16px; }
+  .hero-slide-launch { padding: 0; grid-template-columns: 1fr; grid-template-rows: 54% 46%; }
+  .launch-visual { grid-row: 1; }
+  .launch-visual::after { background: linear-gradient(0deg, #0b101e 0%, transparent 38%); }
+  .launch-copy { grid-row: 2; padding: 28px 20px 72px; justify-content: flex-start; }
+  .launch-copy h1 { font-size: clamp(47px,13vw,72px); }
+  .launch-copy .eyebrow { margin-bottom: 14px; }
+  .launch-copy .hero-copy { margin-top: 18px; line-height: 1.5; }
+  .launch-copy .hero-actions { margin-top: 20px; }
+  .launch-platforms { align-self: flex-start; }
+  .launch-ribbon { display: none; }
   .scroll-intro { padding: 82px 20px; }
   .scroll-intro-card { min-height: 210px; padding: 22px; }
   .section, .section-dark { padding: 86px 20px; }
@@ -719,6 +751,7 @@ html[data-theme="dark"] .scroll-intro-card:nth-child(3).is-active > div { color:
 
 @media (max-width: 520px) {
   .hero { min-height: 900px; }
+  .hero-slide { padding-bottom: 34px; }
   .hero-proof { grid-template-columns: 1fr; }
   .hero-proof div { min-height: 58px; }
   .scroll-intro-card { grid-template-columns: 46px 1fr; gap: 10px 14px; }
