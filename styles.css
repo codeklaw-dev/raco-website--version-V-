@@ -286,7 +286,7 @@ html[data-theme="dark"] .platform-grid img { filter: saturate(.9) brightness(1.1
 .arrow-link { margin-top: 40px; padding: 16px 0; display: flex; justify-content: space-between; border-top: 1px solid var(--ink); font: 500 10px var(--mono); text-transform: uppercase; }
 .story-cta { margin-top: 40px; }
 
-.ai-core { display: block; }
+.ai-core { display: block; padding-top: 0; }
 .ai-core-frame { width: calc(100% + 2 * clamp(24px,5.7vw,92px)); min-height: 940px; margin-left: calc(-1 * clamp(24px,5.7vw,92px)); display: grid; grid-template-columns: minmax(440px,.74fr) minmax(0,1.36fr); overflow: hidden; }
 .ai-core-rail { z-index: 2; padding: 86px 76px 70px 48px; display: flex; flex-direction: column; justify-content: center; position: relative; clip-path: polygon(0 0, calc(100% - 48px) 0, calc(100% - 48px) 29%, 100% 35%, 100% 65%, calc(100% - 48px) 71%, calc(100% - 48px) 100%, 0 100%); background: #404040; }
 .ai-copy > p:not(.eyebrow) { margin: 30px 0 34px; max-width: 560px; color: rgba(255,255,255,.65); font-size: 15px; line-height: 1.8; }
