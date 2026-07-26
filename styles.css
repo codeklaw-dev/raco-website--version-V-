@@ -542,6 +542,13 @@ html[data-theme="dark"] .scroll-card-body > p { color: rgba(255,255,255,.7); }
 html[data-theme="dark"] .scroll-card-body li { border-color: rgba(255,255,255,.12); }
 html[data-theme="dark"] .scroll-card-body > div { background: rgba(255,255,255,.07); }
 html[data-theme="dark"] .scroll-card-body > a { color: var(--acid); }
+.scroll-intro-card:not([open]):hover { background: var(--brand-orange) !important; color: #0b101e; }
+.scroll-intro-card:not([open]):hover::before { background: var(--brand-orange); }
+.scroll-intro-card:not([open]):hover summary,
+.scroll-intro-card:not([open]):hover summary small,
+.scroll-intro-card:not([open]):hover .scroll-icon { color: #0b101e; border-color: #0b101e; }
+html[data-theme="dark"] .scroll-intro-card:not([open]):hover { background: var(--brand-orange) !important; color: #0b101e; }
+html[data-theme="dark"] .scroll-intro-card:not([open]):hover::before { background: var(--brand-orange); }
 .facts-grid div { box-shadow: none !important; }
 .facts-grid strong { color: var(--brand-magenta); }
 .facts-grid div:nth-child(even) strong { color: var(--brand-orange); }
