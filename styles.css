@@ -511,7 +511,9 @@ html[data-theme="dark"] .platform-grid img { filter: saturate(.9) brightness(1.1
 .scroll-intro-card > * { position: relative; z-index: 1; }
 .scroll-intro-card[open] { background: var(--brand-cobalt) !important; box-shadow: 0 22px 55px rgba(11,16,30,.09); }
 .scroll-intro-card[open]::before { background: #f5f5f0; }
-.scroll-intro-card summary { min-height: 122px; padding: 24px 30px; display: grid; grid-template-columns: 58px 1fr 24px; gap: 20px; align-items: center; list-style: none; cursor: pointer; }
+.scroll-intro-card summary { min-height: 122px; padding: 24px 30px; display: grid; grid-template-columns: 58px 1fr 24px; gap: 20px; align-items: center; position: relative; isolation: isolate; overflow: hidden; list-style: none; cursor: pointer; }
+.scroll-intro-card summary::after { content: ""; position: absolute; z-index: -1; inset: 0; background: var(--brand-orange); transform: scaleX(0); transform-origin: left center; transition: transform .48s cubic-bezier(.22,.75,.2,1); }
+.scroll-intro-card summary > * { position: relative; z-index: 1; }
 .scroll-intro-card summary::-webkit-details-marker { display: none; }
 .scroll-intro-card summary > span:nth-child(2) { display: grid; gap: 7px; }
 .scroll-intro-card summary small { font: 500 9px var(--mono); letter-spacing: .1em; }
@@ -543,12 +545,11 @@ html[data-theme="dark"] .scroll-card-body li { border-color: rgba(255,255,255,.1
 html[data-theme="dark"] .scroll-card-body > div { background: rgba(255,255,255,.07); }
 html[data-theme="dark"] .scroll-card-body > a { color: var(--acid); }
 .scroll-intro-card:not([open]):hover { background: var(--brand-orange) !important; color: #0b101e; }
-.scroll-intro-card:not([open]):hover::before { background: var(--brand-orange); }
+.scroll-intro-card:not([open]):hover summary::after { transform: scaleX(1); }
 .scroll-intro-card:not([open]):hover summary,
 .scroll-intro-card:not([open]):hover summary small,
-.scroll-intro-card:not([open]):hover .scroll-icon { color: #0b101e; border-color: #0b101e; }
+.scroll-intro-card:not([open]):hover .scroll-icon { color: #0b101e; border-color: #0b101e; transition: color .28s ease, border-color .28s ease; }
 html[data-theme="dark"] .scroll-intro-card:not([open]):hover { background: var(--brand-orange) !important; color: #0b101e; }
-html[data-theme="dark"] .scroll-intro-card:not([open]):hover::before { background: var(--brand-orange); }
 .facts-grid div { box-shadow: none !important; }
 .facts-grid strong { color: var(--brand-magenta); }
 .facts-grid div:nth-child(even) strong { color: var(--brand-orange); }
