@@ -611,6 +611,29 @@ html[data-theme="dark"] .scroll-card-body > a { color: var(--acid); }
   .prefooter-marquee { animation: none; }
   .ambient-video { display: none; }
 }
+
+/* Keep the Expertise → Numbers notch visible when both sections are dark. */
+html[data-theme="dark"] .facts {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 66% 100%, 63% calc(100% - 44px), 37% calc(100% - 44px), 34% 100%, 0 100%);
+}
+html[data-theme="dark"] .facts::before {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 34%;
+  width: 32%;
+  height: 44px;
+  clip-path: polygon(0 0, 100% 0, 92% 100%, 8% 100%);
+  background: #0a0a0a;
+  pointer-events: none;
+}
+@media (max-width: 840px) {
+  html[data-theme="dark"] .facts {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 75% 100%, 69% calc(100% - 24px), 31% calc(100% - 24px), 25% 100%, 0 100%);
+  }
+  html[data-theme="dark"] .facts::before { left: 25%; width: 50%; height: 24px; }
+}
 footer { padding: 70px clamp(24px,5.7vw,92px) 28px; background: #404040; color: white; }
 .footer-top { padding-bottom: 50px; display: flex; justify-content: space-between; align-items: end; border-bottom: 1px solid var(--line-light); }
 .brand-footer { font-size: 30px; }
