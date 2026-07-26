@@ -165,6 +165,11 @@ h1 em, h2 em { color: var(--acid); font-style: normal; font-weight: 400; }
 .hero-proof div:nth-child(4) { background: rgba(97,164,103,.24); }
 .hero-proof i { color: var(--acid); font-style: normal; }
 .hero-proof span { font: 400 10px/1.5 var(--mono); color: rgba(255,255,255,.72); text-transform: uppercase; }
+.hero .hero-proof { gap: 18px; border: 0; }
+.hero .hero-proof div,
+.hero .hero-proof div:nth-child(n) { min-height: auto; padding: 8px 0; border: 0; background: transparent; backdrop-filter: none; box-shadow: none; }
+.hero .hero-proof i,
+.hero .hero-proof span { text-shadow: 0 2px 14px rgba(0,0,0,.58); }
 .hero-click-zone { position: absolute; z-index: 7; top: 76px; bottom: 0; width: 10%; padding: 0; border: 0; background: transparent; cursor: pointer; }
 .hero-click-prev { left: 0; cursor: w-resize; }
 .hero-click-next { right: 0; cursor: e-resize; }
@@ -568,7 +573,7 @@ html[data-theme="dark"] .scroll-intro-card:not([open]):hover { background: var(-
   .hero-actions { margin-top: 35px; }
   .hero .button-ghost { border-color: rgba(255,255,255,.38); color: white; background: rgba(11,16,30,.2); }
   .hero-proof { width: min(37%,520px); position: absolute; right: clamp(24px,5.7vw,92px); top: auto; bottom: 54px; margin: 0; grid-template-columns: 1fr; border-color: rgba(255,255,255,.18); }
-  .hero-proof div, .hero-proof div:nth-child(n) { min-height: 82px; border-color: rgba(255,255,255,.18); background: rgba(11,16,30,.54); color: white; backdrop-filter: blur(18px); }
+  .hero-proof div, .hero-proof div:nth-child(n) { min-height: auto; padding: 8px 0; border: 0; background: transparent; color: white; backdrop-filter: none; }
   .hero-proof i { color: var(--brand-orange); }
   .hero-proof span { color: rgba(255,255,255,.76); }
 }
@@ -738,7 +743,7 @@ html[data-theme="dark"] .scroll-intro-card:nth-child(3).is-active > div { color:
   html[data-theme="dark"] .hero-copy { color: rgba(255,255,255,.68); }
   html[data-theme="dark"] .hero .button-ghost { border-color: rgba(255,255,255,.28); color: white; background: rgba(255,255,255,.08); }
   html[data-theme="dark"] .hero-proof div,
-  html[data-theme="dark"] .hero-proof div:nth-child(n) { border-color: rgba(255,255,255,.14); background: rgba(64,64,64,.78); color: white; }
+  html[data-theme="dark"] .hero-proof div:nth-child(n) { border: 0; background: transparent; color: white; backdrop-filter: none; }
   html[data-theme="dark"] .hero-proof span { color: rgba(255,255,255,.72); }
 }
 
