@@ -76,8 +76,8 @@ if (heroCarousel) {
 const syncThemeControl = () => {
   if (!themeToggle) return;
   const theme = document.documentElement.dataset.theme;
-  themeToggle.querySelector(".theme-toggle-icon").textContent = theme === "dark" ? "☾" : "☼";
   themeToggle.querySelector(".theme-toggle-label").textContent = theme === "dark" ? "Dark" : "Light";
+  themeToggle.setAttribute("aria-checked", String(theme === "dark"));
   themeToggle.setAttribute("aria-label", `Switch to ${theme === "dark" ? "light" : "dark"} mode`);
 };
 
@@ -154,6 +154,19 @@ const selectOffice = (office) => {
 const classListToggleOffice = (card, office) => card.classList.toggle("is-active", card.dataset.officeCard === office);
 officeControls.forEach((control) => control.addEventListener("click", () => selectOffice(control.dataset.office)));
 officeCards.forEach((card) => card.addEventListener("click", () => selectOffice(card.dataset.officeCard)));
+
+document.querySelectorAll("[data-hub-flip]").forEach((card) => {
+  const toggleCard = () => {
+    const flipped = card.classList.toggle("is-flipped");
+    card.setAttribute("aria-pressed", String(flipped));
+  };
+  card.addEventListener("click", toggleCard);
+  card.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    toggleCard();
+  });
+});
 
 soundButton?.addEventListener("click", () => {
   video.muted = !video.muted;

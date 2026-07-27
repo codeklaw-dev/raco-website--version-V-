@@ -92,7 +92,7 @@
         <a href="/company/">Company</a>
       </nav>
 
-      <button class="theme-toggle" type="button" aria-label="Switch colour theme"><span class="theme-toggle-icon" aria-hidden="true">◐</span><span class="theme-toggle-label">Theme</span></button>
+      <button class="theme-toggle" type="button" aria-label="Switch colour theme" role="switch" aria-checked="false"><span class="theme-toggle-icon" aria-hidden="true"></span><span class="theme-toggle-label">Theme</span></button>
       <a class="header-cta" href="/contact/">Start a project <span>↗</span></a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation">
         <span></span><span></span><span class="sr-only">Open menu</span>
@@ -340,16 +340,16 @@
         </div>
 
         <div class="global-network reveal" aria-label="RACO's Bristol and Dhaka delivery network">
-          <article class="hub-card hub-card-bristol">
-            <div class="hub-card-top"><span>51.4545° N · 2.5879° W</span><i>01</i></div>
-            <div><p>Client, product &amp; strategy</p><h3>Bristol</h3><ul><li>Client partnership</li><li>Product strategy</li><li>Technical leadership</li></ul></div>
+          <article class="hub-card hub-card-bristol" data-hub-flip tabindex="0" role="button" aria-label="Flip Bristol team card" aria-pressed="false">
+            <div class="hub-card-face hub-card-front"><div class="hub-card-top"><span>51.4545° N · 2.5879° W</span><i>01</i></div><div><p>Client, product &amp; strategy</p><h3>Bristol</h3><ul><li>Client partnership</li><li>Product strategy</li><li>Technical leadership</li></ul></div></div>
+            <div class="hub-card-face hub-card-back"><img src="/assets/raco-software-delivery.jpg" alt="RACO Bristol team collaborating" /><div><p>Bristol team culture</p><h3>Curious minds, good coffee, honest conversations.</h3><span>We bring clients and builders together, celebrate thoughtful work and always make room for a laugh.</span></div></div>
           </article>
 
           <div class="network-link" aria-hidden="true"><span></span><b>One delivery system</b><span></span></div>
 
-          <article class="hub-card hub-card-dhaka">
-            <div class="hub-card-top"><span>23.8103° N · 90.4125° E</span><i>02</i></div>
-            <div><p>AI, software &amp; delivery</p><h3>Dhaka</h3><ul><li>AI research</li><li>Software engineering</li><li>Global delivery</li></ul></div>
+          <article class="hub-card hub-card-dhaka" data-hub-flip tabindex="0" role="button" aria-label="Flip Dhaka team card" aria-pressed="false">
+            <div class="hub-card-face hub-card-front"><div class="hub-card-top"><span>23.8103° N · 90.4125° E</span><i>02</i></div><div><p>AI, software &amp; delivery</p><h3>Dhaka</h3><ul><li>AI research</li><li>Software engineering</li><li>Global delivery</li></ul></div></div>
+            <div class="hub-card-face hub-card-back"><img src="/assets/raco-ai-lab.jpg" alt="RACO Dhaka team developing applied AI systems" /><div><p>Dhaka team culture</p><h3>Big ideas, shared lunches, energy to spare.</h3><span>Our engineers learn together, help each other generously and enjoy turning ambitious experiments into real products.</span></div></div>
           </article>
         </div>
 
@@ -391,8 +391,8 @@
     <section class="prefooter-cta reveal" aria-label="Start a project with RACO">
       <a href="/contact/">
         <div class="prefooter-cta-copy"><p>Have something ambitious in mind?</p><h2>Let’s build what<br /><em>comes next.</em> ↗</h2></div>
-        <div class="prefooter-marquee" aria-hidden="true"><span>Software engineering</span><span>Private AI</span><span>Product delivery</span><span>Software engineering</span><span>Private AI</span><span>Product delivery</span><span>Software engineering</span><span>Private AI</span><span>Product delivery</span></div>
       </a>
+      <div class="prefooter-marquee" aria-label="RACO capabilities"><span><i>⌁</i>Software engineering</span><span><i>✦</i>Private AI</span><span><i>◇</i>Product delivery</span></div>
     </section>
       </div>
     </main>
