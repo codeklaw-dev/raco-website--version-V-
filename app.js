@@ -30,6 +30,13 @@ const pendingProductLink = document.querySelector('[data-product-url="pending"]'
 const workFilters = document.querySelector("[data-work-filters]");
 const pendingExternalLink = document.querySelector('[data-external-url="pending"]');
 const heroCarousel = document.querySelector("[data-hero-carousel]");
+const accessForm = document.querySelector("[data-access-form]");
+
+accessForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const status = accessForm.querySelector("[data-access-status]");
+  if (status) status.textContent = "Secure identity service connection pending. Contact RACO operations for authorised access.";
+});
 
 if (heroCarousel) {
   const heroSlides = [...heroCarousel.querySelectorAll("[data-hero-slide]")];
