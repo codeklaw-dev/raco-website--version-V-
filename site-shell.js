@@ -44,13 +44,6 @@ if (headerTarget) {
 
 if (footerTarget) {
   footerTarget.outerHTML = `
-    <section class="prefooter-cta reveal" aria-label="Start a project with RACO">
-      <video class="ambient-video" autoplay muted loop playsinline preload="metadata" poster="/assets/raco-one-cover.jpg" aria-hidden="true"><source src="/assets/raco-fluid-loop.mp4" type="video/mp4" /></video>
-      <a href="/contact/">
-        <div class="prefooter-cta-copy"><p>Have something ambitious in mind?</p><h2>Let’s build what<br /><em>comes next.</em> ↗</h2></div>
-        <div class="prefooter-marquee" aria-hidden="true"><span>Software engineering</span><span>Private AI</span><span>Product delivery</span><span>Software engineering</span><span>Private AI</span><span>Product delivery</span><span>Software engineering</span><span>Private AI</span><span>Product delivery</span></div>
-      </a>
-    </section>
     <footer class="site-footer">
       <div class="footer-hero"><div><p>One partner. End to end.</p><h2>Build the next<br /><em>serious thing.</em></h2></div><a class="footer-project-link" href="/contact/">Start a project <span>↗</span></a></div>
       <div class="footer-directory">
