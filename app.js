@@ -31,6 +31,15 @@ const workFilters = document.querySelector("[data-work-filters]");
 const pendingExternalLink = document.querySelector('[data-external-url="pending"]');
 const heroCarousel = document.querySelector("[data-hero-carousel]");
 const accessForm = document.querySelector("[data-access-form]");
+const contactRouting = document.querySelector("[data-contact-routing]");
+
+if (contactRouting) {
+  const requestedInterest = new URLSearchParams(window.location.search).get("interest");
+  const interestSelect = contactRouting.querySelector('select[name="interest"]');
+  if (requestedInterest && interestSelect?.querySelector(`option[value="${CSS.escape(requestedInterest)}"]`)) {
+    interestSelect.value = requestedInterest;
+  }
+}
 
 accessForm?.addEventListener("submit", (event) => {
   event.preventDefault();
