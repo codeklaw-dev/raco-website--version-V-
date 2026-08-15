@@ -52,9 +52,9 @@ if (footerTarget) {
         <div><span>Offers</span><a href="/business-systems-launch/">Business Systems Launch</a><a href="/ai-automation-pilot/">AI Automation Pilot</a><a href="/contact/?interest=systems-audit">Free systems audit</a><a href="/engagement-models/">Delivery models</a></div>
         <div><span>Join &amp; connect</span><a href="https://racoai.io/careers" target="_blank" rel="noreferrer">Careers portal ↗</a><a href="mailto:hello@racoai.io">hello@racoai.io</a><a href="/contact/">Free discovery session</a><a href="/roi/">Workflow ROI estimator</a></div>
       </div>
-      <div class="footer-hqs" aria-label="RACO engineering headquarters">
-        <a class="footer-hq" href="https://www.google.com/maps/search/?api=1&amp;query=Beacon+Tower+Bristol+BS1+4XE" target="_blank" rel="noreferrer"><span>HQ 01 / United Kingdom</span><strong>Bristol</strong><p>Beacon Tower · Bristol City Centre<br />Bristol BS1 4XE</p><i>Open in Google Maps ↗</i></a>
-        <a class="footer-hq" href="https://www.google.com/maps/search/?api=1&amp;query=House+40+Shahjalal+Avenue+Dhaka+Bangladesh" target="_blank" rel="noreferrer"><span>HQ 02 / Bangladesh</span><strong>Dhaka</strong><p>House 40 · Shahjalal Avenue<br />Dhaka, Bangladesh</p><i>Open in Google Maps ↗</i></a>
+      <div class="footer-hqs" aria-label="RACO delivery locations">
+        <a class="footer-hq" href="https://www.google.com/maps/search/?api=1&amp;query=Bristol+United+Kingdom" target="_blank" rel="noreferrer"><span>Location 01 / United Kingdom</span><strong>Bristol</strong><p>Client relationships · Product strategy<br />United Kingdom</p><i>View Bristol in Google Maps ↗</i></a>
+        <a class="footer-hq" href="https://www.google.com/maps/search/?api=1&amp;query=Dhaka+Bangladesh" target="_blank" rel="noreferrer"><span>Location 02 / Bangladesh</span><strong>Dhaka</strong><p>Engineering delivery · Applied AI Lab<br />Bangladesh</p><i>View Dhaka in Google Maps ↗</i></a>
       </div>
       <div class="footer-trust"><span>Client-owned delivery</span><span>Private AI by design</span><span>Human oversight</span><span>Bristol ↔ Dhaka</span></div>
       <div class="footer-bottom"><span>© 2026 RACO AI</span><div><a href="/privacy/">Privacy</a><a href="/contact/">Contact</a><a href="#top">Back to top ↑</a></div></div>
