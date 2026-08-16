@@ -89,6 +89,101 @@ if (heroCarousel) {
   if (!reduceMotion) startHeroTimer();
 }
 
+const opportunityRail = document.querySelector("[data-opportunity-rail]");
+if (opportunityRail) {
+  const track = opportunityRail.querySelector("[data-rail-track]");
+  const previousButton = opportunityRail.querySelector("[data-rail-prev]");
+  const nextButton = opportunityRail.querySelector("[data-rail-next]");
+  const toggleButton = opportunityRail.querySelector("[data-rail-toggle]");
+  const stateLabel = opportunityRail.querySelector("[data-rail-state]");
+  const progressBar = opportunityRail.querySelector("[data-rail-progress]");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const originalCards = [...track.children];
+  let loopWidth = 0;
+  let manuallyPaused = reducedMotion;
+  let railVisible = true;
+  let previousTime = window.performance.now();
+
+  if (!reducedMotion) {
+    originalCards.forEach((card) => {
+      const clone = card.cloneNode(true);
+      clone.dataset.railClone = "true";
+      clone.setAttribute("aria-hidden", "true");
+      clone.tabIndex = -1;
+      clone.querySelectorAll("a,button,input,select,textarea,[tabindex]").forEach((element) => { element.tabIndex = -1; });
+      track.append(clone);
+    });
+  }
+
+  const updateRailMeasurements = () => {
+    const firstClone = track.querySelector('[data-rail-clone="true"]');
+    loopWidth = firstClone ? firstClone.offsetLeft - originalCards[0].offsetLeft : Math.max(0, track.scrollWidth - track.clientWidth);
+  };
+
+  const updateRailProgress = () => {
+    if (!progressBar || !loopWidth) return;
+    const position = reducedMotion ? track.scrollLeft : track.scrollLeft % loopWidth;
+    progressBar.style.setProperty("--rail-progress", String(Math.min(1, Math.max(0, position / loopWidth))));
+  };
+
+  const normaliseRailPosition = () => {
+    if (!reducedMotion && loopWidth && track.scrollLeft >= loopWidth) track.scrollLeft -= loopWidth;
+    updateRailProgress();
+  };
+
+  const setManualPause = (paused) => {
+    manuallyPaused = paused;
+    toggleButton?.setAttribute("aria-pressed", String(paused));
+    toggleButton?.setAttribute("aria-label", paused ? "Resume automatic movement" : "Pause automatic movement");
+    if (stateLabel) stateLabel.textContent = paused ? "Paused" : "Auto";
+  };
+
+  const moveRail = (direction) => {
+    if (!reducedMotion && direction < 0 && track.scrollLeft < 12) track.scrollLeft = loopWidth;
+    track.scrollBy({ left: direction * Math.min(680, track.clientWidth * .82), behavior: "smooth" });
+  };
+
+  previousButton?.addEventListener("click", () => moveRail(-1));
+  nextButton?.addEventListener("click", () => moveRail(1));
+  toggleButton?.addEventListener("click", () => setManualPause(!manuallyPaused));
+  track.addEventListener("scroll", normaliseRailPosition, { passive: true });
+  if (reducedMotion && toggleButton) {
+    toggleButton.disabled = true;
+    toggleButton.setAttribute("aria-label", "Automatic movement disabled by reduced motion preference");
+    if (stateLabel) stateLabel.textContent = "Manual";
+  }
+
+  const visibilityObserver = new IntersectionObserver(([entry]) => { railVisible = entry.isIntersecting; }, { threshold: .08 });
+  visibilityObserver.observe(opportunityRail);
+  const sizeObserver = new ResizeObserver(() => {
+    updateRailMeasurements();
+    normaliseRailPosition();
+  });
+  sizeObserver.observe(track);
+
+  const animateRail = () => {
+    const time = window.performance.now();
+    const elapsed = Math.min(120, time - previousTime);
+    if (!loopWidth && track.scrollWidth > track.clientWidth) updateRailMeasurements();
+    const userIsInteracting = track.matches(":hover") || opportunityRail.contains(document.activeElement);
+    if (!manuallyPaused && !userIsInteracting && railVisible && !document.hidden && loopWidth) {
+      track.scrollLeft += elapsed * .035;
+      normaliseRailPosition();
+    }
+    previousTime = time;
+  };
+
+  updateRailMeasurements();
+  updateRailProgress();
+  window.setInterval(animateRail, 48);
+  const resetRailStart = () => {
+    track.scrollLeft = 0;
+    updateRailProgress();
+  };
+  if (document.readyState === "complete") resetRailStart();
+  else window.addEventListener("load", resetRailStart, { once: true });
+}
+
 const syncThemeControl = () => {
   if (!themeToggle) return;
   const theme = document.documentElement.dataset.theme;

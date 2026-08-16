@@ -159,25 +159,63 @@
         </div>
       </section>
 
-      <section class="commercial-offers" id="offers" aria-labelledby="offers-title">
-        <div class="commercial-offers-heading reveal">
-          <p class="eyebrow"><span></span> Two ways to start</p>
-          <h2 id="offers-title">Choose the outcome.<br /><em>We shape the system.</em></h2>
-          <p>Both routes begin with a free conversation or a focused review. Delivery starts only after we agree that the problem, scope and commercial case are real.</p>
+      <section class="opportunity-rail" id="offers" aria-labelledby="opportunity-title" data-opportunity-rail>
+        <span class="section-anchor" id="industries" aria-hidden="true"></span>
+        <div class="opportunity-heading reveal">
+          <div>
+            <p class="eyebrow"><span></span> Offers + priority markets</p>
+            <h2 id="opportunity-title">Two ways to start.<br /><em>Five places to apply them.</em></h2>
+          </div>
+          <div class="opportunity-intro">
+            <p>Choose a focused offer, then see where it can create value. The rail advances automatically—scroll, swipe or use the controls whenever you want to explore.</p>
+            <div class="opportunity-controls" aria-label="Opportunity rail controls">
+              <button type="button" data-rail-prev aria-label="Show previous opportunity">←</button>
+              <button type="button" data-rail-toggle aria-label="Pause automatic movement" aria-pressed="false"><span data-rail-state>Auto</span><i aria-hidden="true"></i></button>
+              <button type="button" data-rail-next aria-label="Show next opportunity">→</button>
+            </div>
+          </div>
         </div>
-        <div class="commercial-offer-grid">
-          <a class="commercial-offer commercial-offer-systems reveal" href="/business-systems-launch/">
-            <div class="commercial-offer-top"><span>01 / SOFTWARE</span><i aria-hidden="true">↗</i></div>
-            <div class="commercial-offer-copy"><p>For a critical process held together by spreadsheets, messages or disconnected tools.</p><h3>The Business<br />Systems Launch</h3></div>
-            <div class="commercial-offer-route"><span>Free systems audit</span><b>One core workflow</b><b>Production launch</b><b>Managed support</b></div>
+
+        <div class="opportunity-progress" aria-hidden="true"><span data-rail-progress></span></div>
+        <div class="opportunity-track" data-rail-track tabindex="0" aria-label="RACO offers and priority industries">
+          <a class="opportunity-card opportunity-card-offer opportunity-card-systems" href="/business-systems-launch/">
+            <div class="opportunity-card-top"><span>01 / OFFER · SOFTWARE</span><i>↗</i></div>
+            <div class="opportunity-card-copy"><small>For one critical process held together by disconnected tools.</small><h3>The Business<br />Systems Launch</h3></div>
+            <div class="opportunity-card-meta"><span>Free systems audit</span><span>One workflow</span><span>Production launch</span></div>
           </a>
-          <a class="commercial-offer commercial-offer-ai reveal" href="/ai-automation-pilot/">
-            <div class="commercial-offer-top"><span>02 / AI AUTOMATION</span><i aria-hidden="true">↗</i></div>
-            <div class="commercial-offer-copy"><p>For repetitive knowledge work that is valuable enough to test and bounded enough to control.</p><h3>The AI Automation<br />Pilot</h3></div>
-            <div class="commercial-offer-route"><span>Free AI discovery</span><b>One controlled workflow</b><b>Production rollout</b><b>Managed AI</b></div>
+          <a class="opportunity-card opportunity-card-offer opportunity-card-ai" href="/ai-automation-pilot/">
+            <div class="opportunity-card-top"><span>02 / OFFER · AI</span><i>↗</i></div>
+            <div class="opportunity-card-copy"><small>For repetitive knowledge work that is valuable and controlled enough to automate.</small><h3>The AI Automation<br />Pilot</h3></div>
+            <div class="opportunity-card-meta"><span>Free AI discovery</span><span>One workflow</span><span>Measured rollout</span></div>
+          </a>
+          <a class="opportunity-card opportunity-card-industry" href="/industries/manufacturing/">
+            <img src="/assets/raco-industrial-ai.jpg" alt="Engineers reviewing an intelligent manufacturing line" loading="lazy" />
+            <div class="opportunity-card-shade"></div><div class="opportunity-card-top"><span>03 / LEAD MARKET</span><i>↗</i></div>
+            <div class="opportunity-card-copy"><small>Production visibility · Quality workflows · Applied AI</small><h3>RMG &amp;<br />manufacturing</h3></div>
+          </a>
+          <a class="opportunity-card opportunity-card-industry" href="/industries/education/">
+            <img src="/assets/raco-visual-education.jpg" alt="Education team collaborating around student services" loading="lazy" />
+            <div class="opportunity-card-shade"></div><div class="opportunity-card-top"><span>04 / LEAD MARKET</span><i>↗</i></div>
+            <div class="opportunity-card-copy"><small>Admissions · Student services · Knowledge automation</small><h3>Education</h3></div>
+          </a>
+          <a class="opportunity-card opportunity-card-industry" href="/ai-automation-pilot/">
+            <img src="/assets/raco-visual-commerce.jpg" alt="Customer operations team using connected digital systems" loading="lazy" />
+            <div class="opportunity-card-shade"></div><div class="opportunity-card-top"><span>05 / OPERATIONS</span><i>↗</i></div>
+            <div class="opportunity-card-copy"><small>Service workflows · Knowledge support · Voice automation</small><h3>BPO &amp; customer<br />operations</h3></div>
+          </a>
+          <a class="opportunity-card opportunity-card-industry" href="/expertise/product-development/">
+            <img src="/assets/raco-visual-software.jpg" alt="Product team shaping and reviewing a digital service" loading="lazy" />
+            <div class="opportunity-card-shade"></div><div class="opportunity-card-top"><span>06 / GROWTH</span><i>↗</i></div>
+            <div class="opportunity-card-copy"><small>New products · Internal systems · Delivery capacity</small><h3>Growth<br />companies</h3></div>
+          </a>
+          <a class="opportunity-card opportunity-card-industry" href="/industries/financial-services/">
+            <img src="/assets/raco-visual-finance.jpg" alt="Financial services professionals reviewing a secure digital workflow" loading="lazy" />
+            <div class="opportunity-card-shade"></div><div class="opportunity-card-top"><span>07 / QUALIFIED MARKET</span><i>↗</i></div>
+            <div class="opportunity-card-copy"><small>Controlled workflows · Private knowledge · Data systems</small><h3>Financial<br />services</h3></div>
           </a>
         </div>
-        <div class="free-start-strip reveal">
+
+        <div class="free-start-strip opportunity-start reveal">
           <div><span>No project brief required</span><strong>Bring the workflow that is slowing the business down.</strong></div>
           <a href="/contact/">Book a free discovery session <b>↗</b></a>
           <a href="/contact/?interest=systems-audit">Request a free systems audit <b>↗</b></a>
@@ -315,20 +353,6 @@
           <a class="button button-primary" href="/industries/manufacturing/">Explore manufacturing AI <span>↗</span></a>
         </div>
         <div class="applied-tags"><span>COMPUTER VISION</span><span>PREDICTIVE SYSTEMS</span><span>AUTONOMY</span><span>EDGE AI</span></div>
-      </section>
-
-      <section class="industries section" id="industries">
-        <div class="section-heading reveal">
-          <div><p class="eyebrow"><span></span> Priority markets</p><h2>Start where the operating<br /><em>problem is clearest.</em></h2></div>
-          <p>Manufacturing and education are our lead markets. The same two offers can support customer operations, growth companies and qualified financial-services teams.</p>
-        </div>
-        <div class="industry-directory priority-market-directory">
-          <a href="/industries/manufacturing/" class="reveal"><span>01 / LEAD</span><h3>RMG &amp; manufacturing</h3><p>Production systems · Quality workflows · Applied AI</p><i>↗</i></a>
-          <a href="/industries/education/" class="reveal"><span>02 / LEAD</span><h3>Education</h3><p>Admissions · Student services · Knowledge automation</p><i>↗</i></a>
-          <a href="/ai-automation-pilot/" class="reveal"><span>03</span><h3>BPO &amp; customer operations</h3><p>Service workflows · Knowledge support · Voice automation</p><i>↗</i></a>
-          <a href="/expertise/product-development/" class="reveal"><span>04</span><h3>Growth companies</h3><p>New products · Internal systems · Delivery capacity</p><i>↗</i></a>
-          <a href="/industries/financial-services/" class="reveal"><span>05 / QUALIFIED</span><h3>Financial services</h3><p>Controlled workflows · Private knowledge · Data systems</p><i>↗</i></a>
-        </div>
       </section>
 
       <section class="products section-dark" id="products">
