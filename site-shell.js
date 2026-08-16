@@ -48,7 +48,7 @@ if (footerTarget) {
       <div class="footer-hero"><div><p>One partner. End to end.</p><h2>Bring the workflow.<br /><em>Start free.</em></h2></div><a class="footer-project-link" href="/contact/">Book a free session <span>↗</span></a></div>
       <div class="footer-directory">
         <div><span>Company</span><a href="/company/">About RACO</a><a href="/work/">Selected work</a><a href="/insights/">Insights</a><a href="/contact/">Contact</a></div>
-        <div><span>RACO network</span><a href="/contact/?interest=ai-discovery">RACO app enquiries</a><a href="/raco-lab/">RACO Labs ↗</a><a href="/investors/">Investor hub</a><a href="/control-panel/">Team control panel ↗</a></div>
+        <div><span>RACO network</span><a href="/#products">RACO app</a><a href="/raco-lab/">RACO Labs ↗</a><a href="/investors/">Investor hub</a><a href="/control-panel/">Team control panel ↗</a></div>
         <div><span>Offers</span><a href="/business-systems-launch/">Business Systems Launch</a><a href="/ai-automation-pilot/">AI Automation Pilot</a><a href="/contact/?interest=systems-audit">Free systems audit</a><a href="/engagement-models/">Delivery models</a></div>
         <div><span>Join &amp; connect</span><a href="https://racoai.io/careers" target="_blank" rel="noreferrer">Careers portal ↗</a><a href="mailto:hello@racoai.io">hello@racoai.io</a><a href="/contact/">Free discovery session</a><a href="/roi/">Workflow ROI estimator</a></div>
       </div>
