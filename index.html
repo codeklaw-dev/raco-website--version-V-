@@ -241,36 +241,50 @@
       </section>
 
       <section class="section expertise" id="expertise">
-        <div class="section-heading reveal">
-          <div><p class="eyebrow"><span></span> Expertise</p><h2>Every layer required<br /><em>to move forward.</em></h2></div>
-          <p>Software delivery and AI engineering should not live in separate conversations. We bring both together around the operating reality of your business.</p>
+        <div class="expertise-heading reveal">
+          <p class="eyebrow"><span></span> Expertise</p>
+          <h2>Expertise for businesses<br /><em>building what comes next.</em></h2>
+          <p>One team across software, applied AI and the platforms beneath them. We turn important operational problems into working systems—not another strategy deck.</p>
         </div>
 
         <div class="expertise-switcher reveal" data-tabs>
           <div class="tab-list" role="tablist" aria-label="Expertise categories">
-            <button role="tab" aria-selected="true" aria-controls="tab-software" id="software-tab">Software &amp; product</button>
-            <button role="tab" aria-selected="false" aria-controls="tab-ai" id="ai-tab">AI &amp; data</button>
-            <button role="tab" aria-selected="false" aria-controls="tab-platforms" id="platforms-tab">Platforms &amp; ecosystems</button>
+            <button role="tab" aria-selected="true" aria-controls="tab-development" id="development-tab"><span>01</span>Development &amp; applied AI</button>
+            <button role="tab" aria-selected="false" aria-controls="tab-industries" id="industries-tab" tabindex="-1"><span>02</span>Industry systems</button>
+            <button role="tab" aria-selected="false" aria-controls="tab-platforms" id="platforms-tab" tabindex="-1"><span>03</span>Platforms &amp; ecosystems</button>
+            <a class="expertise-index-link" href="/expertise/"><span>Full directory</span>Explore all expertise <b>↗</b></a>
           </div>
-          <div class="tab-panel service-accordion" id="tab-software" role="tabpanel" aria-labelledby="software-tab" data-accordion>
-            <details><summary><span>01</span><strong>Bespoke software</strong><i>+</i></summary><div><p>Purpose-built platforms and operational systems engineered around the business.</p><a href="/expertise/bespoke-software/">Explore this expertise <b>↗</b></a></div></details>
-            <details><summary><span>02</span><strong>Product development</strong><i>+</i></summary><div><p>Product strategy, UX and full-cycle engineering from validation to scale.</p><a href="/expertise/product-development/">Explore this expertise <b>↗</b></a></div></details>
-            <details><summary><span>03</span><strong>Web &amp; mobile</strong><i>+</i></summary><div><p>Fast, accessible digital products with resilient modern foundations.</p><a href="/expertise/web-mobile/">Explore this expertise <b>↗</b></a></div></details>
-            <details><summary><span>04</span><strong>Cloud modernisation</strong><i>+</i></summary><div><p>Architecture renewal, migration and DevOps that reduce operational drag.</p><a href="/expertise/cloud-modernisation/">Explore this expertise <b>↗</b></a></div></details>
-            <details><summary><span>05</span><strong>QA &amp; DevOps</strong><i>+</i></summary><div><p>Automated quality and delivery controls built into every release.</p><a href="/expertise/qa-devops/">Explore this expertise <b>↗</b></a></div></details>
-            <details><summary><span>06</span><strong>Data engineering</strong><i>+</i></summary><div><p>Trusted data foundations that make analytics and AI production-ready.</p><a href="/expertise/data-engineering/">Explore this expertise <b>↗</b></a></div></details>
-          </div>
-          <div class="tab-panel service-accordion" id="tab-ai" role="tabpanel" aria-labelledby="ai-tab" data-accordion hidden>
-            <details><summary><span>01</span><strong>AI transformation</strong><i>+</i></summary><div><p>A practical path from opportunity mapping to governed AI adoption.</p><a href="/expertise/ai-transformation/">Explore this expertise <b>↗</b></a></div></details>
-            <details><summary><span>02</span><strong>Private AI &amp; RAG</strong><i>+</i></summary><div><p>Secure knowledge systems grounded in approved organisational information.</p><a href="/expertise/private-ai-rag/">Explore this expertise <b>↗</b></a></div></details>
-            <details><summary><span>03</span><strong>Agent development</strong><i>+</i></summary><div><p>Intelligent workers that plan, use tools and execute controlled workflows.</p><a href="/expertise/agent-development/">Explore this expertise <b>↗</b></a></div></details>
-            <details><summary><span>04</span><strong>Voice &amp; computer vision</strong><i>+</i></summary><div><p>Multimodal systems that understand speech, images and physical operations.</p><a href="/expertise/voice-computer-vision/">Explore this expertise <b>↗</b></a></div></details>
-            <details><summary><span>05</span><strong>Managed AI</strong><i>+</i></summary><div><p>Monitoring, governance and optimisation for production AI systems.</p><a href="/engagement-models/managed-ai/">Explore this expertise <b>↗</b></a></div></details>
-          </div>
-          <div class="tab-panel platform-ecosystem" id="tab-platforms" role="tabpanel" aria-labelledby="platforms-tab" hidden>
-            <div class="expertise-group"><p>Cloud services</p><div class="platform-grid"><span><img src="https://cdn.simpleicons.org/amazonwebservices" alt="" />AWS</span><span><img src="https://cdn.simpleicons.org/microsoftazure" alt="" />Microsoft Azure</span><span><img src="https://cdn.simpleicons.org/googlecloud" alt="" />Google Cloud</span><span><i class="platform-private" aria-hidden="true">◇</i>Private infrastructure</span></div></div>
-            <div class="expertise-group"><p>Enterprise platforms</p><div class="platform-grid"><span><img src="https://cdn.simpleicons.org/salesforce" alt="" />Salesforce</span><span><img src="https://cdn.simpleicons.org/sap" alt="" />SAP</span><span><img src="https://cdn.simpleicons.org/oracle" alt="" />Oracle</span><span><img src="https://cdn.simpleicons.org/microsoft365" alt="" />Microsoft 365</span></div></div>
-            <div class="expertise-group"><p>Collaboration platforms</p><div class="platform-grid"><span><img src="https://cdn.simpleicons.org/googleworkspace" alt="" />Google Workspace</span><span><img src="https://cdn.simpleicons.org/slack" alt="" />Slack</span><span><img src="https://cdn.simpleicons.org/microsoftteams" alt="" />Microsoft Teams</span><span><img src="https://cdn.simpleicons.org/hubspot" alt="" />HubSpot</span></div></div>
+          <div class="expertise-panels">
+            <div class="tab-panel expertise-directory" id="tab-development" role="tabpanel" aria-labelledby="development-tab">
+              <div class="expertise-group">
+                <p>Core development services</p>
+                <div class="expertise-link-grid"><a href="/expertise/bespoke-software/">Bespoke software</a><a href="/expertise/product-development/">Product development</a><a href="/expertise/web-mobile/">Web &amp; mobile</a><a href="/expertise/cloud-modernisation/">Cloud modernisation</a><a href="/expertise/qa-devops/">QA &amp; DevOps</a><a href="/expertise/data-engineering/">Data engineering</a></div>
+              </div>
+              <div class="expertise-group">
+                <p>AI &amp; automation systems</p>
+                <div class="expertise-link-grid"><a href="/expertise/ai-transformation/">AI transformation</a><a href="/expertise/private-ai-rag/">Private AI &amp; RAG</a><a href="/expertise/agent-development/">Agent development</a><a href="/expertise/voice-computer-vision/">Voice &amp; computer vision</a><a href="/ai-automation-pilot/">Workflow automation</a><a href="/engagement-models/managed-ai/">Managed AI</a></div>
+              </div>
+            </div>
+            <div class="tab-panel expertise-directory" id="tab-industries" role="tabpanel" aria-labelledby="industries-tab" hidden>
+              <div class="expertise-group">
+                <p>Lead market expertise</p>
+                <div class="expertise-link-grid"><a href="/industries/manufacturing/">RMG &amp; manufacturing</a><a href="/industries/education/">Education</a><a href="/industries/logistics/">Logistics</a><a href="/industries/retail-ecommerce/">Retail &amp; e-commerce</a></div>
+              </div>
+              <div class="expertise-group">
+                <p>Business &amp; service operations</p>
+                <div class="expertise-link-grid"><a href="/ai-automation-pilot/">Customer operations</a><a href="/expertise/product-development/">Growth-company systems</a><a href="/industries/financial-services/">Financial services</a><a href="/industries/healthcare/">Healthcare</a><a href="/industries/legal/">Legal services</a><a href="/industries/real-estate/">Real estate</a></div>
+              </div>
+            </div>
+            <div class="tab-panel expertise-directory" id="tab-platforms" role="tabpanel" aria-labelledby="platforms-tab" hidden>
+              <div class="expertise-group expertise-platform-group">
+                <p>Cloud &amp; infrastructure</p>
+                <div class="expertise-link-grid"><a href="/expertise/cloud-modernisation/"><img src="https://api.iconify.design/logos:aws.svg" alt="" />AWS</a><a href="/expertise/cloud-modernisation/"><img src="https://api.iconify.design/logos:microsoft-azure.svg" alt="" />Microsoft Azure</a><a href="/expertise/cloud-modernisation/"><img src="https://api.iconify.design/logos:google-cloud.svg" alt="" />Google Cloud</a><a href="/expertise/private-ai-rag/"><i aria-hidden="true">◇</i>Private infrastructure</a></div>
+              </div>
+              <div class="expertise-group expertise-platform-group">
+                <p>Enterprise &amp; collaboration platforms</p>
+                <div class="expertise-link-grid"><a href="/contact/"><img src="https://api.iconify.design/logos:salesforce.svg" alt="" />Salesforce</a><a href="/contact/"><img src="https://api.iconify.design/logos:microsoft-icon.svg" alt="" />Microsoft 365</a><a href="/contact/"><img src="https://api.iconify.design/logos:google-icon.svg" alt="" />Google Workspace</a><a href="/contact/"><img src="https://api.iconify.design/logos:slack-icon.svg" alt="" />Slack</a><a href="/contact/"><img src="https://api.iconify.design/logos:microsoft-teams.svg" alt="" />Microsoft Teams</a><a href="/contact/"><img src="https://api.iconify.design/logos:hubspot.svg" alt="" />HubSpot</a></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

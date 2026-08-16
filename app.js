@@ -242,10 +242,22 @@ document.addEventListener("click", (event) => {
 document.querySelectorAll("[data-tabs]").forEach((tabs) => {
   const buttons = [...tabs.querySelectorAll('[role="tab"]')];
   const panels = [...tabs.querySelectorAll('[role="tabpanel"]')];
-  buttons.forEach((button) => button.addEventListener("click", () => {
+  const selectTab = (button, moveFocus = false) => {
     buttons.forEach((item) => item.setAttribute("aria-selected", String(item === button)));
+    buttons.forEach((item) => { item.tabIndex = item === button ? 0 : -1; });
     panels.forEach((panel) => { panel.hidden = panel.id !== button.getAttribute("aria-controls"); });
-  }));
+    if (moveFocus) button.focus();
+  };
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => selectTab(button));
+    button.addEventListener("keydown", (event) => {
+      if (!["ArrowDown", "ArrowRight", "ArrowUp", "ArrowLeft", "Home", "End"].includes(event.key)) return;
+      event.preventDefault();
+      const currentIndex = buttons.indexOf(button);
+      const nextIndex = event.key === "Home" ? 0 : event.key === "End" ? buttons.length - 1 : (currentIndex + (["ArrowDown", "ArrowRight"].includes(event.key) ? 1 : -1) + buttons.length) % buttons.length;
+      selectTab(buttons[nextIndex], true);
+    });
+  });
 });
 
 document.querySelectorAll("[data-accordion]").forEach((accordion) => {
